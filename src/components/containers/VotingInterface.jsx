@@ -65,14 +65,14 @@ function VotingInterface(props) {
     })
   }
   return (
-    <div className="container-fluid pt-5">
+    <div className="container-fluid pt-4 pb-4">
       <div className="row">
         <div className="col-sm-10 offset-sm-1">
           <div className="card text-center">
             <div className="card-header">
               <h5 className="card-title mb-0">React coding examples</h5>
             </div>
-            <div className="card-body p-5">
+            <div className="card-body pr-5 pl-5 pt-4 pb-3">
               <h3>Voting list</h3>
               <h5>Total votes count (up and down): {state.totalVotes}</h5>
               <ul className="no-bullet-list p-0 m-0 mt-4">

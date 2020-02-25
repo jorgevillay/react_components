@@ -17,14 +17,14 @@ function FocusableTextInput(props) {
     state.focused && focusedInput.current.focus();
   })
   return (
-    <div className="container-fluid pt-5">
+    <div className="container-fluid pt-4 pb-4">
       <div className="row">
         <div className="col-sm-6 offset-sm-3">
           <div className="card text-center">
             <div className="card-header">
               <h5 className="card-title mb-0">React coding examples</h5>
             </div>
-            <div className="card-body p-5">
+            <div className="card-body pr-5 pl-5 pt-4 pb-3">
               <h3>Focusable text input</h3>
               <ul className="no-bullet-list p-0 m-0 mt-5">
                 <li>
