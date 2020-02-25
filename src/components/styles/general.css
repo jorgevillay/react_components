@@ -1,8 +1,7 @@
-.disabled-link {
-    pointer-events: none;
-    color: red;
-}
-
 .capitalized-text {
     text-transform: capitalize;
+}
+
+.no-bullet-list {
+    list-style: none;
 }
