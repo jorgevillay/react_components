@@ -1,0 +1,1 @@
+{"version":3,"sources":["general.css"],"names":[],"mappings":"AAAA,kBACI,yBACJ,CAEA,gBACI,eACJ","file":"main.4244d340.chunk.css","sourcesContent":[".capitalized-text {\r\n    text-transform: capitalize;\r\n}\r\n\r\n.no-bullet-list {\r\n    list-style: none;\r\n}"]}
