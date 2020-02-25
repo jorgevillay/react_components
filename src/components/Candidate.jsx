@@ -36,8 +36,8 @@ function Candidate(props) {
                         </div>
                     </div>
                     <div className="col-sm-4 mt-3">
-                        <button className={props.candidate.votes === 0 ? 'btn btn-danger mr-1 disabled no-pointer' : 'btn btn-danger mr-1'} onClick={() => props.handleClick('down', props.candidate.key)}>Vote DOWN</button>
-                        <button className={props.candidate.votes === 20 ? 'btn btn-success ml-1 disabled no-pointer' : 'btn btn-success ml-1'} onClick={() => props.handleClick('up', props.candidate.key)}>Vote UP</button>
+                        <button className="btn btn-danger mr-1" disabled={props.candidate.votes === 0} onClick={() => props.handleClick('down', props.candidate.key)}>Vote DOWN</button>
+                        <button className="btn btn-success ml-1" disabled={props.candidate.votes === 20} onClick={() => props.handleClick('up', props.candidate.key)}>Vote UP</button>
                     </div>
                 </div>
             </div>
