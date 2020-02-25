@@ -65,13 +65,39 @@ function VotingInterface(props) {
     })
   }
   return (
-    <div>
-      <h1>Welcome to VotingInterface</h1>
-      <h4>Total votes count (up and down): {state.totalVotes}</h4>
-      <CandidateList candidates={state.candidates} handleClick={handleClick} />
-      <button onClick={resetInterface}>Recreate random voting list</button>
-      <br />
-      <Link to="/">Return to main menu</Link>
+    <div className="container-fluid pt-5">
+      <div className="row">
+        <div className="col-sm-10 offset-sm-1">
+          <div className="card text-center">
+            <div className="card-header">
+              <h5 className="card-title mb-0">React coding examples</h5>
+            </div>
+            <div className="card-body p-5">
+              <h3>Voting list</h3>
+              <h5>Total votes count (up and down): {state.totalVotes}</h5>
+              <ul className="no-bullet-list p-0 m-0 mt-4">
+                <li>
+                  <CandidateList candidates={state.candidates} handleClick={handleClick} />
+                  <button className="btn btn-primary" onClick={resetInterface}>Recreate random voting list</button>
+                </li>
+                <hr />
+                <li className="mt-4">
+                  <div className="row">
+                    <div className="col-sm-6 offset-sm-3">
+                      <button type="button" className="btn btn-link">
+                        <Link to="/">Return to main menu</Link>
+                      </button>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div className="card-footer text-muted">
+              Developed using React and Formik
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }

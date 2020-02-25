@@ -1,3 +1,7 @@
+.no-pointer {
+    pointer-events: none;
+} 
+
 .capitalized-text {
     text-transform: capitalize;
 }
