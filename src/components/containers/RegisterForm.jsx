@@ -29,42 +29,94 @@ const validatePhonenumber = (value) => {
 
 function RegisterForm() {
   return (
-    <div>
-      <h1>Welcome to RegisterForm</h1>
-      <Formik
-        initialValues={{ username: '', email: '', phonenumber: '' }}
-        onSubmit={(values, { setSubmitting, resetForm }) => {
-          setTimeout(() => {
-            setSubmitting(false);
-            resetForm({});
-          }, 1500)
-        }}
-      >
-        {({
-          errors,
-          touched,
-          handleSubmit,
-          isSubmitting
-        }) => (
-            <Form onSubmit={handleSubmit}>
-              <label>Username</label>
-              <Field name="username" validate={validateUsername} />
-              {errors.username && touched.username && errors.username}
-              <br />
-              <label>Email</label>
-              <Field name="email" validate={validateEmail} />
-              {errors.email && touched.email && errors.email}
-              <br />
-              <label>Phone number</label>
-              <Field name="phonenumber" validate={validatePhonenumber} />
-              {errors.phonenumber && touched.phonenumber && errors.phonenumber}
-              <br />
-              <button type="submit" disabled={isSubmitting}>Submit form</button>
-              <h3>{isSubmitting ? 'Sending form' : 'Pending to send'}</h3>
-            </Form>
-          )}
-      </Formik>
-      <Link to="/">Return to main menu</Link>
+    <div className="container-fluid pt-5">
+      <div className="row">
+        <div className="col-sm-6 offset-sm-3">
+          <div className="card text-center">
+            <div className="card-header">
+              <h5 className="card-title mb-0">React coding examples</h5>
+            </div>
+            <div className="card-body p-5">
+              <h3>Register form</h3>
+              <ul className="no-bullet-list p-0 m-0 mt-5">
+                <li>
+                  <div className="row">
+                    <div className="col-sm-10 offset-sm-1">
+                      <Formik
+                        initialValues={{ username: '', email: '', phonenumber: '' }}
+                        onSubmit={(values, { setSubmitting, resetForm }) => {
+                          setTimeout(() => {
+                            setSubmitting(false);
+                            resetForm({});
+                          }, 1500)
+                        }}
+                      >
+                        {({
+                          errors,
+                          touched,
+                          handleSubmit,
+                          isSubmitting
+                        }) => (
+                            <Form onSubmit={handleSubmit}>
+                              <div className="form-group row">
+                                <label className="col-sm-4 col-form-label">Username</label>
+                                <div className="col-sm-8">
+                                  <Field className={(errors.username && touched.username) ? 'form-control is-invalid' : 'form-control '} name="username" validate={validateUsername} />
+                                </div>
+                                <div className="col-sm-8 offset-sm-4">
+                                  <small className="text-danger">
+                                    {errors.username && touched.username && errors.username}
+                                  </small>
+                                </div>
+                              </div>
+                              <div className="form-group row">
+                                <label className="col-sm-4 col-form-label">Email</label>
+                                <div className="col-sm-8">
+                                  <Field className={(errors.email && touched.email) ? 'form-control is-invalid' : 'form-control '} name="email" validate={validateEmail} />
+                                </div>
+                                <div className="col-sm-8 offset-sm-4">
+                                  <small className="text-danger">
+                                    {errors.email && touched.email && errors.email}
+                                  </small>
+                                </div>
+                              </div>
+                              <div className="form-group row">
+                                <label className="col-sm-4 col-form-label">Phone number</label>
+                                <div className="col-sm-8">
+                                  <Field className={(errors.phonenumber && touched.phonenumber) ? 'form-control is-invalid' : 'form-control '} name="phonenumber" validate={validatePhonenumber} />
+                                </div>
+                                <div className="col-sm-8 offset-sm-4">
+                                  <small className="text-danger">
+                                    {errors.phonenumber && touched.phonenumber && errors.phonenumber}
+                                  </small>
+                                </div>
+                              </div>
+                              <button type="submit" className="btn btn-primary mt-2" disabled={isSubmitting}>Submit form</button>
+                              <h5 className={isSubmitting ? 'text-info mt-3' : 'text-warning mt-3'}>{isSubmitting ? 'Sending form' : 'Pending to send'}</h5>
+                            </Form>
+                          )}
+                      </Formik>
+                    </div>
+                  </div>
+                </li>
+                <hr />
+                <li className="mt-4">
+                  <div className="row">
+                    <div className="col-sm-6 offset-sm-3">
+                      <button type="button" className="btn btn-link">
+                        <Link to="/">Return to main menu</Link>
+                      </button>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div className="card-footer text-muted">
+              Developed using React and Formik
+                </div>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
